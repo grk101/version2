@@ -323,8 +323,7 @@ protected:
     Vec8f z1;
 public:
     // Default constructor:
-    Vec16f() {
-    }
+    Vec16f() = default;
     // Constructor to broadcast the same value into all elements:
     Vec16f(float f) {
         z0 = z1 = Vec8f(f);

@@ -95,8 +95,7 @@ protected:
     __m512 zmm; // Float vector
 public:
     // Default constructor:
-    Vec16f() {
-    }
+    Vec16f() = default;
     // Constructor to broadcast the same value into all elements:
     Vec16f(float f) {
         zmm = _mm512_set1_ps(f);

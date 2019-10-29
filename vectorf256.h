@@ -575,8 +575,7 @@ protected:
     __m256 ymm; // Float vector
 public:
     // Default constructor:
-    Vec8f() {
-    }
+    Vec8f() = default;
     // Constructor to broadcast the same value into all elements:
     Vec8f(float f) {
         ymm = _mm256_set1_ps(f);

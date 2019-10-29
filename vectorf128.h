@@ -93,8 +93,7 @@ protected:
     __m128 xmm; // Float vector
 public:
     // Default constructor:
-    Vec4fb() {
-    }
+    Vec4fb() = default;
     // Constructor to build from all elements:
     Vec4fb(bool b0, bool b1, bool b2, bool b3) {
         xmm = _mm_castsi128_ps(_mm_setr_epi32(-(int)b0, -(int)b1, -(int)b2, -(int)b3));
@@ -485,8 +484,7 @@ protected:
     __m128 xmm; // Float vector
 public:
     // Default constructor:
-    Vec4f() {
-    }
+    Vec4f() = default;
     // Constructor to broadcast the same value into all elements:
     Vec4f(float f) {
         xmm = _mm_set1_ps(f);

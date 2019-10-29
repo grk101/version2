@@ -118,8 +118,7 @@ static inline Vec256de selectd (Vec256de const s, Vec256de const a, Vec256de con
 class Vec8fb : public Vec256fe {
 public:
     // Default constructor:
-    Vec8fb() {
-    }
+    Vec8fb() = default;
     // Constructor to build from all elements:
     Vec8fb(bool b0, bool b1, bool b2, bool b3, bool b4, bool b5, bool b6, bool b7) {
         y0 = Vec4fb(b0, b1, b2, b3);
@@ -306,8 +305,7 @@ static inline bool horizontal_or (Vec8fb const a) {
 class Vec4db : public Vec256de {
 public:
     // Default constructor:
-    Vec4db() {
-    }
+    Vec4db() = default;
     // Constructor to build from all elements:
     Vec4db(bool b0, bool b1, bool b2, bool b3) {
         y0 = Vec2db(b0, b1);
@@ -494,8 +492,7 @@ static inline bool horizontal_or (Vec4db const a) {
 class Vec8f : public Vec256fe {
 public:
     // Default constructor:
-    Vec8f() {
-    }
+    Vec8f() = default;
     // Constructor to broadcast the same value into all elements:
     Vec8f(float f) {
         y1 = y0 = _mm_set1_ps(f);
