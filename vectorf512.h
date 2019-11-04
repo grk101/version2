@@ -68,16 +68,16 @@ inline Vec8b::Vec8b(Vec4db const x0, Vec4db const x1) {
     mm = to_bits(x0) | (to_bits(x1) << 4);
 }
 
-Vec8ib Vec16b::get_low() const {
+inline Vec8ib Vec16b::get_low() const {
     return Vec8ib().load_bits(uint8_t(mm));
 }
-Vec8ib Vec16b::get_high() const {
+inline Vec8ib Vec16b::get_high() const {
     return Vec8ib().load_bits(uint8_t((uint16_t)mm >> 8u));
 }
-Vec4qb Vec8b::get_low() const {
+inline Vec4qb Vec8b::get_low() const {
     return Vec4qb().load_bits(mm & 0xF);
 }
-Vec4qb Vec8b::get_high() const {
+inline Vec4qb Vec8b::get_high() const {
     return Vec4qb().load_bits(mm >> 4u);
 }
 
@@ -712,8 +712,7 @@ protected:
     __m512d zmm; // double vector
 public:
     // Default constructor:
-    Vec8d() {
-    }
+    Vec8d() = default;
     // Constructor to broadcast the same value into all elements:
     Vec8d(double d) {
         zmm = _mm512_set1_pd(d);

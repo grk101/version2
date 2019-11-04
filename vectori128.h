@@ -79,8 +79,7 @@ protected:
     __mmask16  mm; // Boolean mask register
 public:
     // Default constructor:
-    Vec16b() {
-    }
+    Vec16b() = default;
     // Constructor to convert from type __mmask16 used in intrinsics
     Vec16b(__mmask16 x) {
         mm = x;
@@ -229,8 +228,8 @@ public:
     Vec4b get_low()  const;
     Vec4b get_high() const;
 #elif INSTRSET == 9 && MAX_VECTOR_SIZE >= 512    // special case of mixed compact and broad vectors
-    Vec4qb get_low()  const;                     // in vectorf512.h
-    Vec4qb get_high() const;                     // in vectorf512.h
+    inline Vec4qb get_low()  const;                     // in vectorf512.h
+    inline Vec4qb get_high() const;                     // in vectorf512.h
 #endif 
     // Member function to change a single element in vector
     Vec8b const insert(int index, bool value) {
@@ -747,8 +746,7 @@ protected:
     __m128i xmm; // Integer vector
 public:
     // Default constructor:
-    Vec128b() {
-    }
+    Vec128b() = default;
     // Constructor to convert from type __m128i used in intrinsics:
     Vec128b(__m128i const x) {
         xmm = x;

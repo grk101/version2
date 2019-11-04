@@ -176,7 +176,7 @@ protected:
     __m256i ymm; // Integer vector
 public:
     // Default constructor:
-    Vec256b() {}
+    Vec256b() = default;
 
     // Constructor to broadcast the same value into all elements
     // Removed because of undesired implicit conversions:
@@ -1291,8 +1291,7 @@ static inline Vec32uc min(Vec32uc const a, Vec32uc const b) {
 class Vec16s : public Vec256b {
 public:
     // Default constructor:
-    Vec16s() {
-    }
+    Vec16s() = default;
     // Constructor to broadcast the same value into all elements:
     Vec16s(int i) {
         ymm = _mm256_set1_epi16((int16_t)i);
@@ -2152,8 +2151,7 @@ static inline Vec16us min(Vec16us const a, Vec16us const b) {
 class Vec8i : public Vec256b {
 public:
     // Default constructor:
-    Vec8i() {
-    }
+    Vec8i() = default;
     // Constructor to broadcast the same value into all elements:
     Vec8i(int i) {
         ymm = _mm256_set1_epi32(i);

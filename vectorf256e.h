@@ -55,7 +55,7 @@ protected:
     __m128 y0;                         // low half
     __m128 y1;                         // high half
 public:
-    Vec256fe(void) {};                 // default constructor
+    Vec256fe(void) = default;                 // default constructor
     Vec256fe(__m128 x0, __m128 x1) {   // constructor to build from two __m128
         y0 = x0;  y1 = x1;
     }
