@@ -1150,7 +1150,7 @@ constexpr uint64_t blend_flags(int const (&a)[V::size()]) {
                 r |= blend_rotateab;
             }
             const uint32_t elementsize = sizeof(V) / N;
-            r |= uint64_t((rot & lanesize - 1) * elementsize) << blend_rotpattern;
+            r |= uint64_t((rot & (lanesize - 1)) * elementsize) << blend_rotpattern;
         }
 #endif
         if (lanesize == 4) {
